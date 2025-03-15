@@ -126,6 +126,42 @@
     text-overflow: ellipsis;
     white-space: normal;
 }
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 48%; /* Two fields in one row */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #1a1a1a;
+    color: white;
+}
+
+.contact-form textarea {
+    width: 100%; /* Textarea takes full width */
+    height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+}
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -148,6 +184,9 @@
     .service-box {
         flex-shrink: 0;
     }
+            .contact-form input, .contact-form textarea {
+        width: 100%; /* Fields stack on small screens */
+            }
         }
     </style>
     <script>
@@ -211,6 +250,12 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Get in touch for professional event coverage and broadcasting.</p>
+        <form class="contact-form" action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
     
     <footer>
