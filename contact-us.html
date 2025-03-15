@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Acromatic Productions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            position: relative;
+        }
+        .logo img{
+            height: 50px;
+        }
+        nav {
+            display: flex;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00aaff;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mobile-menu ul li {
+            margin: 10px 0;
+        }
+        .mobile-menu ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .mobile-menu ul li a:hover {
+            color: #00aaff;
+        }
+        #home {
+            background: linear-gradient(to right, #000428, #004e92);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        section {
+            padding: 60px 20px;
+        }
+        .cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .cta:hover {
+            background-color: #0088cc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        .services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.service-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 48%; /* Two fields in one row */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #1a1a1a;
+    color: white;
+}
+
+.contact-form textarea {
+    width: 100%; /* Textarea takes full width */
+    height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+}
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 200px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+           .service-box {
+        width: 90%; /* Slightly wider on small screens */
+        font-size: 14px; /* Adjust text size to prevent overflow */
+        padding: 15px;
+        word-wrap: break-word; /* Ensures text wraps properly */
+            }
+            .contact-form input, .contact-form textarea {
+        width: 100%; /* Fields stack on small screens */
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('mobileMenu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="https://acromatic-technologies.github.io/assets/acromatic%20technologies%20logo%20-%20copy.png" alt="Acromatic Productions"></div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+                <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section id="home">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for professional event coverage and broadcasting.</p>
+    </section>
+    
+    <section id="contact">
+        <form class="contact-form" action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Acromatic Productions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
