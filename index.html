@@ -22,10 +22,8 @@
             background-color: #1a1a1a;
             position: relative;
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00aaff;
+        .logo img{
+            height: 50px;
         }
         nav {
             display: flex;
@@ -103,6 +101,18 @@
             padding: 20px;
             background-color: #1a1a1a;
         }
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+        }
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -117,6 +127,16 @@
                 width: 200px;
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             }
+            .services-container {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                scroll-behavior: smooth;
+            }
+            .service-box {
+                display: inline-block;
+                min-width: 250px;
+            }
         }
     </style>
     <script>
@@ -128,7 +148,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Acromatic Productions</div>
+        <div class="logo"><img src="https://acromatic-technologies.github.io/assets/acromatic%20technologies%20logo%20-%20copy.png" alt="Acromatic Productions"></div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
             <ul>
@@ -159,6 +179,12 @@
     <section id="services">
         <h2>Our Services</h2>
         <p>High-quality live event broadcasting, multi-camera setups, and more.</p>
+        <div class="services-container">
+            <div class="service-box"><h3>Broadcast</h3><p>Live multi-camera event coverage with 4K quality.</p></div>
+            <div class="service-box"><h3>Shooting</h3><p>Professional cinematography for events and commercials.</p></div>
+            <div class="service-box"><h3>Editing</h3><p>High-end video editing and post-production services.</p></div>
+            <div class="service-box"><h3>Streaming</h3><p>Multi-platform live streaming for YouTube, Facebook, and more.</p></div>
+        </div>
     </section>
     
     <section id="portfolio">
