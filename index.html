@@ -102,17 +102,30 @@
             background-color: #1a1a1a;
         }
         .services-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .service-box {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 8px;
-            width: 250px;
-        }
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar */
+}
+
+.services-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.service-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    min-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -127,16 +140,14 @@
                 width: 200px;
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             }
-            .services-container {
-                display: flex;
-                overflow-x: auto;
-                white-space: nowrap;
-                scroll-behavior: smooth;
-            }
-            .service-box {
-                display: inline-block;
-                min-width: 250px;
-            }
+            services-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .service-box {
+        flex-shrink: 0;
+    }
         }
     </style>
     <script>
